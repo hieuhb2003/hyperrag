@@ -1,0 +1,2 @@
+2026-02-04 00:32:04,195 - INFO - Load pretrained SentenceTransformer: model/all-mpnet-base-v2
+2026-02-04 00:32:04,550 - WARNING - No sentence-transformers model found with name model/all-mpnet-base-v2. Creating a new one with mean pooling.

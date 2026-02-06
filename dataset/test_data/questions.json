@@ -1,0 +1,58 @@
+[
+  {
+    "question": "What is the birth year of Bill Gates' wife?",
+    "answer": "1964",
+    "type": "multi-hop",
+    "hops": 2,
+    "reasoning": "Bill Gates → wife → Melinda French Gates → birth year 1964"
+  },
+  {
+    "question": "Which company does L.Messi currently play for?",
+    "answer": "Inter Miami",
+    "type": "alias-resolution",
+    "hops": 1,
+    "reasoning": "L.Messi = Leo Messi → Inter Miami"
+  },
+  {
+    "question": "Who founded the company where Satya Nadella is CEO?",
+    "answer": "Bill Gates and Paul Allen",
+    "type": "multi-hop",
+    "hops": 2,
+    "reasoning": "Satya Nadella → CEO of Microsoft → founded by Bill Gates and Paul Allen"
+  },
+  {
+    "question": "In which city is the team that Messi joined in 2023 located?",
+    "answer": "Fort Lauderdale, Florida",
+    "type": "multi-hop",
+    "hops": 2,
+    "reasoning": "Messi → joined Inter Miami in 2023 → based in Fort Lauderdale"
+  },
+  {
+    "question": "What was the previous company of the current Real Madrid player from France?",
+    "answer": "Paris Saint-Germain",
+    "type": "multi-hop",
+    "hops": 2,
+    "reasoning": "French player at Real Madrid → Mbappé → previously at PSG"
+  },
+  {
+    "question": "Who owns the team where Mbappé previously played?",
+    "answer": "Qatar Sports Investments",
+    "type": "multi-hop",
+    "hops": 3,
+    "reasoning": "Mbappé → previously at PSG → owned by Qatar Sports Investments"
+  },
+  {
+    "question": "What year did the founder of SpaceX acquire Twitter?",
+    "answer": "2022",
+    "type": "multi-hop",
+    "hops": 2,
+    "reasoning": "SpaceX founder → Elon Musk → acquired Twitter in 2022"
+  },
+  {
+    "question": "Where is the company founded by Jeff Bezos headquartered?",
+    "answer": "Seattle, Washington",
+    "type": "multi-hop",
+    "hops": 2,
+    "reasoning": "Jeff Bezos → founded Amazon → headquartered in Seattle"
+  }
+]

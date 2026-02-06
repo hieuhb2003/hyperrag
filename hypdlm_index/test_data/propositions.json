@@ -1,0 +1,329 @@
+{
+  "prop_52c61a9ea72f973992ff1299784552ae": {
+    "text": "Kylian Mbappé is a French professional footballer.",
+    "source_chunk_id": "chunk_b3cbab5db4aa7d9ba5a51a971196d9ad",
+    "entities": [
+      "french",
+      "kylian mbappé"
+    ]
+  },
+  "prop_f698901a6d61fba66e428f4d5d7a3a41": {
+    "text": "Kylian Mbappé currently plays for Real Madrid.",
+    "source_chunk_id": "chunk_b3cbab5db4aa7d9ba5a51a971196d9ad",
+    "entities": [
+      "real madrid",
+      "kylian mbappé"
+    ]
+  },
+  "prop_781f842243e2aa777f3f0be023862bb9": {
+    "text": "Kylian Mbappé previously played for Paris Saint-Germain.",
+    "source_chunk_id": "chunk_b3cbab5db4aa7d9ba5a51a971196d9ad",
+    "entities": [
+      "paris saint-germain",
+      "kylian mbappé"
+    ]
+  },
+  "prop_eded41433d0bfc9ba539eee0ddb3432b": {
+    "text": "Jeff Bezos founded Amazon in 1994.",
+    "source_chunk_id": "chunk_2f3120fa8bbef7faaeaafde55ca5eee6",
+    "entities": [
+      "jeff bezos",
+      "amazon",
+      "1994"
+    ]
+  },
+  "prop_8009461a98611bca0bdc39359ba67998": {
+    "text": "Jeff Bezos stepped down as CEO in 2021.",
+    "source_chunk_id": "chunk_2f3120fa8bbef7faaeaafde55ca5eee6",
+    "entities": [
+      "jeff bezos",
+      "2021"
+    ]
+  },
+  "prop_7fa345dadb5ce5ab0120a384e0f20018": {
+    "text": "Jeff Bezos remains executive chairman of Amazon.",
+    "source_chunk_id": "chunk_2f3120fa8bbef7faaeaafde55ca5eee6",
+    "entities": [
+      "jeff bezos",
+      "amazon"
+    ]
+  },
+  "prop_1f645c8d2d886a3a8566ea2c05972568": {
+    "text": "Microsoft is headquartered in Redmond, Washington.",
+    "source_chunk_id": "chunk_074f2c0797070a0cc00deab51dbee66c",
+    "entities": [
+      "redmond",
+      "microsoft",
+      "washington"
+    ]
+  },
+  "prop_da4b62d5df478c7029c7e11ce9fe86f6": {
+    "text": "Microsoft was incorporated in New Mexico.",
+    "source_chunk_id": "chunk_074f2c0797070a0cc00deab51dbee66c",
+    "entities": [
+      "new mexico",
+      "microsoft"
+    ]
+  },
+  "prop_281ab6c3bfff36ca34271fa37335c44e": {
+    "text": "Microsoft was incorporated in 1981.",
+    "source_chunk_id": "chunk_074f2c0797070a0cc00deab51dbee66c",
+    "entities": [
+      "microsoft",
+      "1981"
+    ]
+  },
+  "prop_82a9af56ebc1dfb735656df3b4beee9f": {
+    "text": "Microsoft moved its headquarters to Washington state.",
+    "source_chunk_id": "chunk_074f2c0797070a0cc00deab51dbee66c",
+    "entities": [
+      "microsoft",
+      "washington"
+    ]
+  },
+  "prop_d3861c4d0e2b40710a5e944e8c7b605a": {
+    "text": "Melinda French Gates was born on August 15, 1964.",
+    "source_chunk_id": "chunk_1743acdaa4152ec12db80fe51b1b77e3",
+    "entities": [
+      "melinda french gates",
+      "august 15, 1964"
+    ]
+  },
+  "prop_8395e2270267a844f11e2e2533a9b454": {
+    "text": "Melinda French Gates was born in Dallas, Texas.",
+    "source_chunk_id": "chunk_1743acdaa4152ec12db80fe51b1b77e3",
+    "entities": [
+      "melinda french gates",
+      "dallas",
+      "texas"
+    ]
+  },
+  "prop_c3081ab84137e0b08c84d70779861c0d": {
+    "text": "Melinda French Gates graduated from Duke University.",
+    "source_chunk_id": "chunk_1743acdaa4152ec12db80fe51b1b77e3",
+    "entities": [
+      "melinda french gates",
+      "duke university"
+    ]
+  },
+  "prop_9fc41b9f56d0f6179072b90a4b98b083": {
+    "text": "Melinda French Gates earned a bachelor's degree in computer science.",
+    "source_chunk_id": "chunk_1743acdaa4152ec12db80fe51b1b77e3",
+    "entities": [
+      "melinda french gates"
+    ]
+  },
+  "prop_89d8786a77e18eb8b09e97be0277d579": {
+    "text": "Melinda French Gates earned a bachelor's degree in economics.",
+    "source_chunk_id": "chunk_1743acdaa4152ec12db80fe51b1b77e3",
+    "entities": [
+      "melinda french gates"
+    ]
+  },
+  "prop_7d3eb4b276c8022d62b80d01fc84620c": {
+    "text": "Tesla was founded in 2003.",
+    "source_chunk_id": "chunk_1d3c39a876b722c938f67f4978a22a5b",
+    "entities": [
+      "2003",
+      "tesla"
+    ]
+  },
+  "prop_b401e73d76194a4bb8f6cb2d683efff4": {
+    "text": "Tesla was founded by Martin Eberhard.",
+    "source_chunk_id": "chunk_1d3c39a876b722c938f67f4978a22a5b",
+    "entities": [
+      "tesla",
+      "martin eberhard"
+    ]
+  },
+  "prop_0fa361c6ca71ac3a5105e28fd1f9e94f": {
+    "text": "Tesla was founded by Marc Tarpenning.",
+    "source_chunk_id": "chunk_1d3c39a876b722c938f67f4978a22a5b",
+    "entities": [
+      "tesla",
+      "marc tarpenning"
+    ]
+  },
+  "prop_96706823d815a41e69d0af5a7d6a24b1": {
+    "text": "Elon Musk joined as chairman of the board.",
+    "source_chunk_id": "chunk_1d3c39a876b722c938f67f4978a22a5b",
+    "entities": [
+      "elon musk"
+    ]
+  },
+  "prop_9868d53e097611ccb1b9b9656b85b5a1": {
+    "text": "Elon Musk became CEO.",
+    "source_chunk_id": "chunk_1d3c39a876b722c938f67f4978a22a5b",
+    "entities": [
+      "elon musk"
+    ]
+  },
+  "prop_afdbe7bb9263c71683d57c5d1a59b925": {
+    "text": "SpaceX was founded by Elon Musk in 2002.",
+    "source_chunk_id": "chunk_8a366f0cb81ea8932e810fd2b1a4b5d7",
+    "entities": [
+      "2002",
+      "elon musk",
+      "spacex"
+    ]
+  },
+  "prop_61f1a9764fb159a3f0bf14ed659e1186": {
+    "text": "SpaceX has the goal of reducing space transportation costs.",
+    "source_chunk_id": "chunk_8a366f0cb81ea8932e810fd2b1a4b5d7",
+    "entities": [
+      "spacex"
+    ]
+  },
+  "prop_fbdc609711ad61195a49297a8b4d6f4a": {
+    "text": "SpaceX has the goal of enabling the colonization of Mars.",
+    "source_chunk_id": "chunk_8a366f0cb81ea8932e810fd2b1a4b5d7",
+    "entities": [
+      "mars",
+      "spacex"
+    ]
+  },
+  "prop_ba0afb9fb92e34a32c7c2ae7f2cfd719": {
+    "text": "Blue Origin is a space company.",
+    "source_chunk_id": "chunk_76c257f362a9ce354e7dfae19e7afba2",
+    "entities": [
+      "blue origin"
+    ]
+  },
+  "prop_79bcdb72ec1fe89340db1ff1972a1ea4": {
+    "text": "Blue Origin was founded by Jeff Bezos.",
+    "source_chunk_id": "chunk_76c257f362a9ce354e7dfae19e7afba2",
+    "entities": [
+      "jeff bezos",
+      "blue origin"
+    ]
+  },
+  "prop_465a2255839bbb2f1624ebbf05687d33": {
+    "text": "Blue Origin was founded in 2000.",
+    "source_chunk_id": "chunk_76c257f362a9ce354e7dfae19e7afba2",
+    "entities": [
+      "2000",
+      "blue origin"
+    ]
+  },
+  "prop_e6d627fea302b2aee48d854cef5ef255": {
+    "text": "Blue Origin is developing vehicles for suborbital spaceflight.",
+    "source_chunk_id": "chunk_76c257f362a9ce354e7dfae19e7afba2",
+    "entities": [
+      "blue origin"
+    ]
+  },
+  "prop_96a397468d41b6ad4cb7f7aae6b873bb": {
+    "text": "Blue Origin is developing vehicles for orbital spaceflight.",
+    "source_chunk_id": "chunk_76c257f362a9ce354e7dfae19e7afba2",
+    "entities": [
+      "blue origin"
+    ]
+  },
+  "prop_be74a9644c1fa5b86f48e895e67d600c": {
+    "text": "Paul Allen co-founded Microsoft with Bill Gates.",
+    "source_chunk_id": "chunk_16683e1d003f5e036dae5543c80441ef",
+    "entities": [
+      "paul allen",
+      "bill gates",
+      "microsoft"
+    ]
+  },
+  "prop_e3e2fd53bda181708313e7c0ee450e54": {
+    "text": "Paul Allen left Microsoft in 1983.",
+    "source_chunk_id": "chunk_16683e1d003f5e036dae5543c80441ef",
+    "entities": [
+      "paul allen",
+      "1983",
+      "microsoft"
+    ]
+  },
+  "prop_870f943f00d536506490ca225ca540ee": {
+    "text": "Paul Allen left Microsoft due to health issues.",
+    "source_chunk_id": "chunk_16683e1d003f5e036dae5543c80441ef",
+    "entities": [
+      "paul allen",
+      "microsoft"
+    ]
+  },
+  "prop_4171f059656f9bed2bbae326e7ed74a3": {
+    "text": "Paul Allen remained on the board until 2000.",
+    "source_chunk_id": "chunk_16683e1d003f5e036dae5543c80441ef",
+    "entities": [
+      "paul allen",
+      "2000"
+    ]
+  },
+  "prop_a8c3b69280084a7c2725f0961161e1b4": {
+    "text": "Bill Gates founded Microsoft Corporation.",
+    "source_chunk_id": "chunk_0493849a9c4cc55eb5b6310c8a1a6516",
+    "entities": [
+      "bill gates",
+      "microsoft corporation"
+    ]
+  },
+  "prop_78bd44d421664374ffe5e192be2ad834": {
+    "text": "Bill Gates founded Microsoft Corporation in 1975.",
+    "source_chunk_id": "chunk_0493849a9c4cc55eb5b6310c8a1a6516",
+    "entities": [
+      "bill gates",
+      "microsoft corporation",
+      "1975"
+    ]
+  },
+  "prop_81de8c411e07884499855bb91d5d986c": {
+    "text": "Paul Allen founded Microsoft Corporation.",
+    "source_chunk_id": "chunk_0493849a9c4cc55eb5b6310c8a1a6516",
+    "entities": [
+      "paul allen",
+      "microsoft corporation"
+    ]
+  },
+  "prop_91298ddd09a7ee125e93aa08be49c73c": {
+    "text": "Paul Allen founded Microsoft Corporation in 1975.",
+    "source_chunk_id": "chunk_0493849a9c4cc55eb5b6310c8a1a6516",
+    "entities": [
+      "paul allen",
+      "1975",
+      "microsoft corporation"
+    ]
+  },
+  "prop_32130e38c2fe79e63c370fca3424ba1d": {
+    "text": "Microsoft became one of the world's largest technology companies.",
+    "source_chunk_id": "chunk_0493849a9c4cc55eb5b6310c8a1a6516",
+    "entities": [
+      "microsoft"
+    ]
+  },
+  "prop_79b033b3f237d09f57910d225a96b5a3": {
+    "text": "Microsoft revolutionized personal computing.",
+    "source_chunk_id": "chunk_0493849a9c4cc55eb5b6310c8a1a6516",
+    "entities": [
+      "microsoft"
+    ]
+  },
+  "prop_ce804839556c65971410affff7bdcb37": {
+    "text": "Leo Messi won the FIFA World Cup with Argentina in 2022.",
+    "source_chunk_id": "chunk_83e2b3844a88848b0364e6aeab2bd861",
+    "entities": [
+      "2022",
+      "leo messi",
+      "argentina",
+      "the fifa world cup"
+    ]
+  },
+  "prop_54ac7984a9bf12b609713f3e173ed206": {
+    "text": "Leo Messi defeated France in the final.",
+    "source_chunk_id": "chunk_83e2b3844a88848b0364e6aeab2bd861",
+    "entities": [
+      "leo messi",
+      "france"
+    ]
+  },
+  "prop_b8ceeee8a9faf0cda1c2a517ac7903ce": {
+    "text": "Leo Messi is considered one of the greatest football players of all time.",
+    "source_chunk_id": "chunk_83e2b3844a88848b0364e6aeab2bd861",
+    "entities": [
+      "leo messi"
+    ]
+  }
+}
