@@ -1,0 +1,121 @@
+# Full configuration for HyP-DLM
+
+# === Debug / Logging ===
+logging:
+  level: "DEBUG"          # DEBUG, INFO, WARNING, ERROR
+  show_step_results: true # Print intermediate results at each pipeline step
+  show_matrix_stats: true # Print sparse matrix statistics
+  log_file: null          # null = stdout only; set path for file logging
+
+# === Phase 1: Indexing ===
+chunking:
+  method: "llm_anchor"           # "similarity" (embedding-based) or "llm_anchor" (LLM boundary detection)
+  llm_model: "gpt-4o-mini"      # Model for anchor chunking
+  llm_temperature: 0.0
+  llm_max_tokens: 256            # LLM returns just marker numbers
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  similarity_threshold: 0.5
+  min_chunk_tokens: 50
+  max_chunk_tokens: 300
+  overlap_sentences: 1
+
+ner:
+  model: "spacy"          # "spacy" or "gliner"
+  gliner_model: "urchade/gliner_multi-v2.1"
+  spacy_model: "en_core_web_sm"
+  entity_types: ["person", "organization", "location", "date", "event", "product"]
+  min_entity_length: 2
+  exclude_types: ["CARDINAL", "ORDINAL", "QUANTITY"]
+
+entity_linking:
+  lexical_prefilter: 0.7          # JW threshold for standard path (len > 5)
+  synonym_threshold: 0.9          # Combined threshold for standard path
+  lexical_weight: 0.3
+  semantic_weight: 0.7
+  short_entity_max_len: 5         # Entities <= this length use short-entity bypass
+  short_entity_threshold: 0.85    # Semantic-only threshold for short entities
+  exclude_numeric_dates: true
+
+masking:
+  strategy: "hdbscan"
+  hdbscan:
+    min_cluster_size: 15
+    min_samples: 5
+    cluster_selection_method: "eom"
+    include_noise_in_mask: true
+  kmeans:
+    k: null
+    k_heuristic: "sqrt"
+    auto_select: false
+    max_k: 200
+    n_init: 10
+  faiss_direct:
+    use_gpu: false
+
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2"
+  batch_size: 256
+  normalize: true
+
+indexing:
+  max_workers: 4
+  parallel_chunking: true
+  parallel_ner: true
+  ner_batch_size: 50
+  incremental: true
+
+# === Phase 2: Retrieval ===
+router:
+  probe_k: 10
+  temperature: 1.0
+  threshold_high: 0.75
+  threshold_low: 0.45
+  entropy_low: 1.5
+  entropy_high: 2.5
+
+decomposition:
+  llm_model: "gpt-4o-mini"
+  max_sub_questions: 6
+
+propagation:
+  strategy: "damped_ppr"
+  alpha: 0.85
+  convergence_eps: 0.01
+  convergence_min_new: 2
+  max_hops: 6
+  top_p_clusters: 5
+  pruning_threshold: 0.05
+  entity_top_k: 30
+  hyperedge_top_k: 30
+  synonym_weight: 0.3
+  alpha_parent: 0.5
+
+ppr:
+  damping_factor: 0.85
+  iterations: 20
+  top_k_passages: 10
+  query_weight: 0.3
+
+chunk_retrieval:
+  top_k: 5
+
+# === Phase 3: Generation ===
+generation:
+  llm_model: "gpt-4o-mini"
+  max_tokens: 4096
+  temperature: 0.0
+  fusion_weight_graph: 0.7
+  fusion_weight_chunk: 0.3
+
+# === Debug Mode ===
+debug:
+  enabled: false
+  output_dir: "data/debug"
+  save_checkpoints: true
+  save_report: true
+  max_sample_items: 3
+
+# === Evaluation ===
+evaluation:
+  benchmarks: ["hotpotqa", "2wikimqa", "musique"]
+  metrics: ["f1", "retrieval_similarity", "generation_eval"]
