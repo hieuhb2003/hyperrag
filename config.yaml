@@ -1,0 +1,78 @@
+# HyP-DLM Configuration
+# All defaults match paper (Appendix B)
+
+# --- General ---
+device: "cpu"           # "cuda", "cpu", "mps"
+seed: 42
+storage_dir: "storage"
+embedding_model: "all-mpnet-base-v2"
+
+# --- Coreference ---
+coref_model: "LingMessCoref"
+coref_batch_size: 32
+
+# --- Chunking ---
+chunk_min_tokens: 50
+chunk_max_tokens: 300
+chunk_breakpoint_percentile: 90.0
+
+# --- NER ---
+ner_backend: "gliner"   # "gliner" or "spacy"
+gliner_model: "fastino/gliner2-base-v1"
+spacy_model: "en_core_web_sm"
+ner_min_entity_len: 3
+ner_entity_types:
+  - person
+  - organization
+  - location
+  - event
+  - date
+  - concept
+  - product
+  - technology
+
+# --- Synonym Matrix ---
+synonym_rrf_k: 60
+synonym_char_ngram_min: 2
+synonym_char_ngram_max: 4
+synonym_context_gate: "AND"
+synonym_cosine_agg: "MAX"
+synonym_rrf_threshold: 0.01
+synonym_ctx_threshold: 0.3
+
+# --- Semantic Masking ---
+hdbscan_min_cluster_size: 15
+multi_label_threshold: 0.5
+
+# --- Propagation ---
+ppr_alpha: 0.85
+ppr_epsilon_conv: 0.01
+ppr_max_iterations: 6
+ppr_top_p_clusters: 5
+ppr_delta_pruning: 0.05
+ppr_tau_init: 0.5
+ppr_alpha_parent: 0.5
+
+# --- Scoring ---
+score_weight_hyper: 1.0
+score_weight_entity: 0.3
+score_top_k_per_subq: 30
+score_top_n_final: 10
+
+# --- LLM ---
+llm_model: "gpt-4o-mini"
+llm_temperature: 0.0
+llm_max_tokens: 1024
+
+# --- Workers ---
+max_workers: 4
+index_batch_size: 10
+
+# --- Logging ---
+log_level: "INFO"
+log_dir: "logs"
+metrics_dir: "metrics"
+
+# --- Output ---
+output_dir: "output"
+dataset_name: "default"
