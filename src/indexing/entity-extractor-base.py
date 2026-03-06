@@ -38,6 +38,10 @@ class EntityExtractorBase(ABC):
         """Return list of (entity_text, entity_type) from a chunk."""
         pass
 
+    def extract_from_text(self, text: str) -> list[tuple[str, str]]:
+        """Extract entities from raw text string. Returns list of (entity_text, entity_type)."""
+        return self.extract_from_chunk(type("_Text", (), {"id": "_raw_", "text": text})())
+
     def extract_all(self, chunks: list) -> list[Entity]:
         """Extract entities from all chunks, deduplicate globally."""
         from tqdm import tqdm

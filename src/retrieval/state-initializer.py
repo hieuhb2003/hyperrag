@@ -94,18 +94,11 @@ class StateInitializer:
         return s_0
 
     def _extract_entities(self, text: str) -> list[str]:
-        """Quick NER on sub-question text. Returns list of entity strings."""
+        """NER on sub-question text. Returns list of entity strings."""
         if self.ner_extractor is None:
             return []
-
-        # Create a minimal chunk-like object for the NER extractor
-        class _FakeChunk:
-            def __init__(self, text):
-                self.id = "_query_"
-                self.text = text
-
         try:
-            raw = self.ner_extractor.extract_from_chunk(_FakeChunk(text))
+            raw = self.ner_extractor.extract_from_text(text)
             return [ent_text for ent_text, _ in raw]
         except Exception as e:
             logger.debug(f"NER extraction failed for query text: {e}")
