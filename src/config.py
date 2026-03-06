@@ -83,10 +83,9 @@ class Config:
     dataset_name: str = "default"
 
     def storage_path(self) -> Path:
-        """Returns storage path with embedding model name for ablation."""
-        # Replace / in model name with underscore
+        """Returns storage/{dataset_name}/{embedding_model}/ for ablation."""
         safe_name = self.embedding_model.replace("/", "_")
-        return Path(self.storage_dir) / safe_name
+        return Path(self.storage_dir) / self.dataset_name / safe_name
 
     def to_dict(self) -> dict:
         return asdict(self)

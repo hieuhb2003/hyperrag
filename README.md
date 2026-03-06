@@ -41,7 +41,7 @@ python -m src.main index --data data/documents.json
 
 This runs: Coreference Resolution -> Semantic Chunking -> NER -> Incidence Matrix -> Synonym Matrix -> Semantic Masking.
 
-Artifacts saved to `storage/{embedding_model}/`.
+Artifacts saved to `storage/{dataset_name}/{embedding_model}/`.
 
 ### Step 2: Retrieve (Query Decomposition + Propagation)
 
@@ -126,7 +126,7 @@ python -m src.main evaluate --dataset-name default
 ## Output Structure
 
 ```
-storage/{embedding_model}/       # Index artifacts (matrices, embeddings, clusters)
+storage/{dataset_name}/{embedding_model}/  # Index artifacts
 output/{dataset_name}/           # Retrieval & generation results
 metrics/{dataset_name}/          # Token usage & timing JSON
 logs/                            # Log files
