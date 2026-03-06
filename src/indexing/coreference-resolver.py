@@ -24,9 +24,25 @@ class CoreferenceResolver:
         self.model = None
 
     def load_model(self):
-        """Load FastCoref LingMessCoref model."""
+        """Load FastCoref LingMessCoref model with transformers compatibility patch."""
+        import functools
         from fastcoref import LingMessCoref
-        self.model = LingMessCoref(device=self.config.device)
+        from transformers import AutoModel
+
+        # Patch AutoModel.from_config to fix attn_implementation error
+        # with transformers >= 4.46 (requires 'eager' attention)
+        original_from_config = AutoModel.from_config
+
+        def patched_from_config(config, *args, **kwargs):
+            kwargs["attn_implementation"] = "eager"
+            return original_from_config(config, *args, **kwargs)
+
+        try:
+            AutoModel.from_config = functools.partial(patched_from_config)
+            self.model = LingMessCoref(device=self.config.device)
+        finally:
+            AutoModel.from_config = original_from_config
+
         logger.info(f"Loaded LingMessCoref on {self.config.device}")
 
     def resolve(self, documents: list) -> list:
