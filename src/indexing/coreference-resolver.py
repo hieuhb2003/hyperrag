@@ -24,10 +24,25 @@ class CoreferenceResolver:
         self.model = None
 
     def load_model(self):
-        """Load FastCoref LingMessCoref model (requires transformers==4.45.1)."""
-        from fastcoref import LingMessCoref
-        self.model = LingMessCoref(device=self.config.device)
-        logger.info(f"Loaded LingMessCoref on {self.config.device}")
+        """Load FastCoref LingMessCoref with attn_implementation patch."""
+        import functools
+        from fastcoref import LingMessCoref as OriginalLingMessCoref
+        from transformers import AutoModel
+
+        class PatchedLingMessCoref(OriginalLingMessCoref):
+            def __init__(self, *args, **kwargs):
+                original_from_config = AutoModel.from_config
+                def patched_from_config(config, *a, **kw):
+                    kw['attn_implementation'] = 'eager'
+                    return original_from_config(config, *a, **kw)
+                try:
+                    AutoModel.from_config = functools.partial(patched_from_config)
+                    super().__init__(*args, **kwargs)
+                finally:
+                    AutoModel.from_config = original_from_config
+
+        self.model = PatchedLingMessCoref(device=self.config.device)
+        logger.info(f"Loaded PatchedLingMessCoref on {self.config.device}")
 
     def resolve(self, documents: list) -> list:
         """Resolve coreferences in all documents. Returns new Document list."""
