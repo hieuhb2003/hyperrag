@@ -101,11 +101,14 @@ class SemanticChunker:
         else:
             breakpoints = []
 
-        # Group sentences
+        # Group sentences by semantic breakpoints
         groups = self._group_sentences(sentences, breakpoints, embeddings)
 
-        # Enforce min/max token constraints
-        chunks = self._enforce_constraints(doc.id, groups)
+        # Create Chunk objects directly from semantic groups
+        chunks = []
+        for idx, g in enumerate(groups):
+            embs = np.array(g["embeddings"]) if len(g["embeddings"]) > 0 else np.zeros((1, 768))
+            chunks.append(self._make_chunk(doc.id, idx, g["sentences"], embs, g["indices"]))
         return chunks
 
     def _split_sentences(self, text: str) -> list[str]:
@@ -139,57 +142,6 @@ class SemanticChunker:
             "embeddings": embeddings[prev:],
         })
         return groups
-
-    def _enforce_constraints(self, doc_id: str, groups: list[dict]) -> list[Chunk]:
-        """Merge small groups, split large groups to meet token limits."""
-        min_tok = self.config.chunk_min_tokens
-        max_tok = self.config.chunk_max_tokens
-
-        # First pass: merge tiny groups with neighbors
-        merged = []
-        buffer = {"sentences": [], "indices": [], "embeddings": []}
-
-        for g in groups:
-            token_count = sum(len(s.split()) for s in g["sentences"])
-            buf_tokens = sum(len(s.split()) for s in buffer["sentences"])
-
-            if buf_tokens + token_count <= max_tok:
-                buffer["sentences"].extend(g["sentences"])
-                buffer["indices"].extend(g["indices"])
-                buffer["embeddings"].extend(
-                    g["embeddings"] if isinstance(g["embeddings"], list) else list(g["embeddings"])
-                )
-            else:
-                if buffer["sentences"]:
-                    merged.append(buffer)
-                buffer = {
-                    "sentences": list(g["sentences"]),
-                    "indices": list(g["indices"]),
-                    "embeddings": list(g["embeddings"]) if isinstance(g["embeddings"], list) else list(g["embeddings"]),
-                }
-        if buffer["sentences"]:
-            merged.append(buffer)
-
-        # Second pass: if any group is still < min_tokens, merge with previous
-        final_groups = []
-        for g in merged:
-            token_count = sum(len(s.split()) for s in g["sentences"])
-            if final_groups and token_count < min_tok:
-                prev = final_groups[-1]
-                prev_tokens = sum(len(s.split()) for s in prev["sentences"])
-                if prev_tokens + token_count <= max_tok:
-                    prev["sentences"].extend(g["sentences"])
-                    prev["indices"].extend(g["indices"])
-                    prev["embeddings"].extend(g["embeddings"])
-                    continue
-            final_groups.append(g)
-
-        # Create Chunk objects
-        chunks = []
-        for idx, g in enumerate(final_groups):
-            embs = np.array(g["embeddings"]) if g["embeddings"] else np.zeros((1, 768))
-            chunks.append(self._make_chunk(doc_id, idx, g["sentences"], embs, g["indices"]))
-        return chunks
 
     def _make_chunk(self, doc_id, idx, sentences, embeddings, indices) -> Chunk:
         """Create a Chunk object with mean embedding."""

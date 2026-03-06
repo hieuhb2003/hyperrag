@@ -22,8 +22,6 @@ class Config:
     coref_batch_size: int = 32
 
     # --- Chunking ---
-    chunk_min_tokens: int = 50
-    chunk_max_tokens: int = 300
     chunk_breakpoint_percentile: float = 90.0
 
     # --- NER ---

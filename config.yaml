@@ -12,8 +12,6 @@ coref_model: "LingMessCoref"
 coref_batch_size: 32
 
 # --- Chunking ---
-chunk_min_tokens: 50
-chunk_max_tokens: 300
 chunk_breakpoint_percentile: 90.0
 
 # --- NER ---

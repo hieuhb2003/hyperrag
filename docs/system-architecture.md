@@ -30,7 +30,7 @@ Storage artifacts (matrices, embeddings, clusters)
 
 **Key Components:**
 - **Coreference:** Resolves pronouns → canonical entity forms
-- **Chunking:** Splits docs at semantic breakpoints (min 50, max 300 tokens)
+- **Chunking:** Splits docs at semantic breakpoints (cosine similarity between consecutive sentence embeddings)
 - **NER:** Extracts entities with types; global deduplication
 - **Matrices:**
   - H_norm: normalized incidence matrix for propagation
@@ -152,9 +152,7 @@ Metrics aggregation and cross-run comparison.
 | Component | Param | Value | Purpose |
 |-----------|-------|-------|---------|
 | General | device | cuda/mps/cpu | Execution device |
-| Chunking | min_tokens | 50 | Min chunk size |
-| | max_tokens | 300 | Max chunk size |
-| | breakpoint_percentile | 90 | Cosine similarity threshold |
+| Chunking | breakpoint_percentile | 90 | Cosine similarity breakpoint threshold |
 | NER | backend | gliner/spacy | Entity extraction |
 | | min_entity_len | 3 | Min entity text length |
 | Synonym | rrf_k | 60 | RRF denominator |
